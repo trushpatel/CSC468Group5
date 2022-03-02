@@ -1,6 +1,6 @@
 FROM node:4-slim
 RUN npm install express
-RUN npm install redis
+RUN npm create-react-app webChess
 COPY files/ /files/
 COPY webui.js /
 CMD ["node", "webui.js"]
