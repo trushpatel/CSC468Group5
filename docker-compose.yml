@@ -8,5 +8,5 @@ services:
     volumes:
     - "./webui/files/:/files/"
 
-  postgreSQL:
-    image: postgreSQL
+  postgres:
+    image: postgres
