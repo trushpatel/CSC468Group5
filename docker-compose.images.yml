@@ -7,5 +7,5 @@ services:
     ports:
     - "8000:80"
 
-  postgreSQL:
-    image: postgreSQL
+  postgres:
+    image: postgres
