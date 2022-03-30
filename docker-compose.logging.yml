@@ -12,8 +12,8 @@ services:
       options:
         gelf-address: udp://localhost:12201
 
-  postgreSQL:
-    image: postgreSQL
+  postgres:
+    image: postgres
     logging:
       driver: gelf
       options:
