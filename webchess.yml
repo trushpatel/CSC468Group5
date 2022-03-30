@@ -33,10 +33,10 @@ spec:
   template:
     metadata:
       labels:
-        app: postgreSQL
+        app: postgres
     spec:
       containers:
-      - name: postgreSQL
+      - name: postgres
         image: 
         ports:
           - name: 
