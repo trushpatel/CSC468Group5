@@ -24,12 +24,12 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgreSQL
+  name: postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgreSQL
+      app: postgres
   template:
     metadata:
       labels:
