@@ -1,6 +1,6 @@
 import psycopg2
 
-conn = psycopg2.connect(
+conn = psycopg2.connect( # need to fill this in with actual credentials
     host="localhost",
     database="suppliers",
     user="postgres",
