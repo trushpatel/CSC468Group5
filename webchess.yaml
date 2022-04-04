@@ -1,14 +1,10 @@
 services:
   webui:
     image: nginx
-    ports:
-      - 8080:8080
   database:
     image: postgres
     volumes:
       - database_data:/var/lib/postgresql/data
-    ports:
-      - 8080:8081
     environment: # update these values with actual credentials
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
