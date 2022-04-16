@@ -1,10 +1,10 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-app.get('/', function (req, res) {
-    res.redirect('/index.html');
+app.get('/', (req, res) => {
+  res.redirect('/index.html');
+  //res.redirect('/index.html');
+  res.send('Welcome to Web Chess!');
 });
 
-var server = app.listen(80, function () {
-    console.log('WEBUI running on port 80');
-});
+app.use(express.static('files'));
