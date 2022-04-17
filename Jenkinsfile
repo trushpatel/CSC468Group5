@@ -48,8 +48,8 @@ pipeline {
                 sshagent(credentials: ['cloudlab']) {
                  
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 cd'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl create deployment registry --image=registry'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl expose deploy/registry --port=5000 --type=NodePort'
+//                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl create deployment registry --image=registry'
+//                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl expose deploy/registry --port=5000 --type=NodePort'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl get svc'
 
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl patch service registry --type=\'json\' --patch=\'[{\"op\": \"replace\", \"path\": \"/spec/ports/0/nodePort\", \"value\":30000}]\''
