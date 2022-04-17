@@ -52,7 +52,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl expose deploy/registry --port=5000 --type=NodePort'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl get svc'
 
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl patch service registry --type='json' --patch='[{"op": "replace", "path": "/spec/ports/0/nodePort", "value":30000}]''
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl patch service registry --type=\'json\' --patch=\'[{"op": "replace", "path": "/spec/ports/0/nodePort", "value":30000}]\''
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 kubectl get svc'
 
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 docker pull busybox'
@@ -61,7 +61,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 curl 127.0.0.1:30000/v2/_catalog'
 
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 git clone https://github.com/trushpatel/CSC468Group5.git'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 cd ~/CSC468Group5
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 cd ~/CSC468Group5'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 docker-compose -f docker-compose.images.yml build'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 docker-compose -f docker-compose.images.yml push'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.38.244 curl 127.0.0.1:30000/v2/_catalog'
