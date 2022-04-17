@@ -23,7 +23,7 @@ pipeline {
 //                     sh 'export GO111MODULE=auto; go build'  
 //                 }
 //             }     
-        }
+//         }
 //         stage('Publish') {
 //             agent {
 //                 kubernetes {
