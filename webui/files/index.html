@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./loginpage.css" />
     <link rel="icon" type="image/jpg" href="img/favicon.jpg" />
 </head>
 <body>
+  <main id="main-holder">
+    <h1 id="login-header">Login</h1>
+    
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit">
+    </form>
+  
+  </main>
     <div class="chess-table">
         <div id="a8" class="piece-box white-box"></div>
         <div id="b8" class="piece-box black-box"></div>
@@ -112,5 +127,6 @@
 
     <script src="./app.js" defer type="module"></script>
     <script src="./gameclock.js"></script>
+    <script src="./loginpage.js"></script>
 </body>
 </html>
