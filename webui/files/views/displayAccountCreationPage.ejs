@@ -1,2 +1,21 @@
-<p> <a href="/displayIndex">Return to home</a></p>
-<h1>New account form</h1>
+<head>
+    <link rel="stylesheet" href="./newaccountpage.css" />
+</head>
+
+<main id="main-holder">
+    <p> <a href="/displayIndex">Go back</a></p>
+    <h1 id="new-account-header">Create a New Account</h1>
+    
+    <div id="new-account-error-msg-holder">
+      <p id="new-account-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    
+    <form action="/displayDashboard" id="new-account-form">
+      <input type="text" name="username" id="username-field" class="new-account-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="new-account-form-field" placeholder="Password">
+      <input type="submit" value="Submit" id="new-account-form-submit">
+    </form>
+  
+</main>
+
+<script src="/files/newaccountpage.js"></script>
