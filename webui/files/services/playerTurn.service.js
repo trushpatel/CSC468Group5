@@ -1,4 +1,3 @@
-
 export const playerTurn = {
     whosTurn: 'white',
 

@@ -10,6 +10,33 @@
 <main id="main-holder">
   <p> <a href="/displayDashboard">Return to dashboard</a></p>
   <body>
+    <div class="chess-message">
+      <div class="black-wins check-mate-message fade-in">Black Wins</div>
+      <div class="white-wins check-mate-message fade-in">White Wins</div>
+  </div>
+
+  <div class="player">
+    
+      <div class="player__tile player-1">
+        <div class="player__digits">
+          <span>Player 1:</span>
+          <span id="min1">10</span>:<span id="sec1">00</span>
+        </div>
+      </div>
+      
+      <div class="player__tile player-2">
+        <div class="player__digits">
+          <span>Player 2:</span>
+          <span id="min2">10</span>:<span id="sec2">00</span>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="timer__buttons">
+      <button class="timer__start-bttn bttn" type="button">START</button>
+      <button class="timer__reset-bttn bttn" type="button">RESET</button>
+    </div>
       <div class="chess-table">
           <div id="a8" class="piece-box white-box"></div>
           <div id="b8" class="piece-box black-box"></div>
@@ -83,34 +110,6 @@
           <div id="g1" class="piece-box black-box"></div>
           <div id="h1" class="piece-box white-box"></div>
       </div>
-
-      <div class="chess-message">
-          <div class="black-wins check-mate-message fade-in">Black Wins</div>
-          <div class="white-wins check-mate-message fade-in">White Wins</div>
-      </div>
-
-      <div class="player">
-        
-          <div class="player__tile player-1">
-            <div class="player__digits">
-              <span id="min1">10</span>:<span id="sec1">00</span>
-            </div>
-          </div>
-          
-          <div class="player__tile player-2">
-            <div class="player__digits">
-              <span id="min2">10</span>:<span id="sec2">00</span>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="timer__buttons">
-          <button class="timer__start-bttn bttn" type="button">START</button>
-          <button class="timer__reset-bttn bttn" type="button">RESET</button>
-        </div>
-
-
       <script src="./app.js" defer type="module"></script>
       <script src="./gameclock.js"></script>
   </body>
