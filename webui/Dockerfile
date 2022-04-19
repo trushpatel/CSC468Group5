@@ -1,5 +1,8 @@
 FROM node:4-slim
 RUN npm install express
+RUN npm install ejs
+RUN npm install express-ejs-layouts
+RUN npm install
 COPY files/ /files/
 COPY webui.js /
 CMD ["node", "/webui.js"]
