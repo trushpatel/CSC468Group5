@@ -43,14 +43,8 @@ COPY --chown=stockfish:stockfish source.txt /stockfish/
 COPY --chown=stockfish:stockfish --from=builder /Stockfish/src/*.nnue /stockfish/
 
 EXPOSE 23249
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["./stockfish"]
 
-# FROM alpine
-# RUN apk update
-# RUN apk add git make g++
-# RUN git clone https://github.com/official-stockfish/Stockfish.git
-# WORKDIR /Stockfish/src
-# RUN make net
-# RUN make build ARCH=x86-64-modern
-# CMD ["./stockfish"]
-# for some damn reason it says it can't find the makefile even though it's there
+# docker run -t -i stockfish
+# ^P^Q
+# docker reattach <id/name>
