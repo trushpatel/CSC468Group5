@@ -1,0 +1,68 @@
+import React, { Fragment, useState, useEffect } from 'react';
+import './App.css';
+
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
+// components
+import { Dashboard } from './components/Dashboard';
+import { Login } from './components/Login';
+import { Register } from './components/Register';
+import { GameSession } from './components/GameSession';
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isInMatch, setIsInMatch] = useState(false);
+
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean);
+  };
+
+  const setInMatch = (boolean) => {
+    setIsInMatch(boolean);
+  }
+
+  async function isAuth() {
+    try {
+      const response = await fetch("http://localhost:5000/auth/is-verify", {
+        method: "GET",
+        headers: {token: localStorage.token}
+      });
+      const parseRes = await response.json();
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
+  useEffect(() => {
+    isAuth();
+  });
+
+  // when at the dashboard isInMatch = false
+  // when click Play Now isInMatch = true
+  // isInMatch = true -> route to gameSession and setInMatch = true
+  
+
+  // gameSession: button Return to Dashboard setInMatch = false
+
+
+
+  return (
+    <Fragment>
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route exact path="/" element={<Navigate to ="/login" />} />
+            <Route exact path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to ="/dashboard" />} />
+            <Route exact path="/register"  element={!isAuthenticated ? <Register setAuth={setAuth} /> : <Navigate to ="/login" />} />
+            <Route exact path="/dashboard"  element={isAuthenticated ? <Dashboard setAuth={setAuth} /> : <Navigate to ="/login" />} />
+            <Route exact path="/dashboard"  element={!isInMatch ? <Dashboard setAuth={setAuth} /> : <Navigate to ="/gameSession" />} />
+            <Route exact path="/gameSession"  element={isAuthenticated ? <GameSession setAuth={setAuth} /> : <Navigate to ="/login"/>}/>
+          </Routes>
+        </div>
+      </Router>
+    </Fragment>
+  );
+}
+
+export default App;
