@@ -1,8 +1,7 @@
 FROM node:4-slim
-RUN npm install express
-RUN npm install ejs
-RUN npm install express-ejs-layouts
-COPY files/ /files/
-COPY webui.js /
-CMD ["node", "/webui.js"]
+RUN npm i express cors pg jsonwebtoken bcrypt dotenv react react-router-dom
+COPY files/ /files/client
+COPY files/ /files/server
+WORKDIR "/client"
+CMD ["PORT=80", "npm", "start"]
 EXPOSE 80
