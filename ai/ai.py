@@ -13,7 +13,8 @@
 # version = cur.fetchone()
 # print(version)
 
-import http
+
+# PIP INSTALL REQUESTS
 
 conn = http.client.HTTPSConnection("localhost", 8443)
 conn.request('GET', '/')
