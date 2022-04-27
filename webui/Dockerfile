@@ -1,5 +1,5 @@
 FROM node:4-slim
-RUN npm i express cors pg jsonwebtoken bcrypt dotenv react react-router-dom
+RUN npm i express react react-router-dom
 COPY files/ /files/client
 COPY files/ /files/server
 WORKDIR "/client"
