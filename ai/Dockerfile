@@ -2,8 +2,8 @@
 
 FROM alpine:latest AS builder
 # Install dependencies
-RUN apk add --no-cache git g++ make
-
+RUN apk add --no-cache git g++ make python3 py3-pip
+RUN pip install stockfish
 RUN git clone --depth 1 --branch sf_14 https://github.com/official-stockfish/Stockfish.git
 
 WORKDIR /Stockfish/src
