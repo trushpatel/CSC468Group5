@@ -26,7 +26,7 @@ pipeline {
             }
             steps {
                 sshagent(credentials: ['cloudlab']) {
-                    sh "sed -i 's/kcodd3\/webui/${docker_user}/g' webui.yml"
+                    sh "sed -i 's/kcodd3/webui/${docker_user}/g' webui.yml"
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' webui.yml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yml kcodd3@155.98.37.68:~/'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui.yml -n jenkins'
