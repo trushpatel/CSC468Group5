@@ -13,8 +13,8 @@ spec:
         app: database
     spec:
       containers:
-      - name: database
-        image: 
+      - name: webui
+        image: DOCKER_REGISTRY/database:BUILD_NUMBER
         ports:
-          - name: 
-            containerPort: 
+          - name: http-port
+            containerPort: 80
