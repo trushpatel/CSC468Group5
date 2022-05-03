@@ -1,1 +1,3 @@
-# install postgreSQL and set up a database
+# filler to test pipeline
+FROM node:4-slim
+RUN npm install express
