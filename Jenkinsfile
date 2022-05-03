@@ -26,11 +26,11 @@ pipeline {
             }
             steps {
                 sshagent(credentials: ['cloudlab']) {
-                    sh "sed -i 's/DOCKER_REGISTRY/${docker_user}/g' webui.yaml"
-                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' webui.yaml"
-                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml kcodd3@155.98.37.68:~/'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui.yaml -n jenkins'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui-service.yaml -n jenkins'                                        
+                    sh "sed -i 's/DOCKER_REGISTRY/${docker_user}/g' webui.yml"
+                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' webui.yml"
+                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yml kcodd3@155.98.37.68:~/'
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui.yml -n jenkins'
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui-service.yml -n jenkins'                                        
                 }
             }
         }
