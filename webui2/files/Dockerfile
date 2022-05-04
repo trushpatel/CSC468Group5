@@ -15,6 +15,6 @@ RUN npm install --production
 
 COPY /server/.env ./
 
-EXPOSE 80
+EXPOSE 3000
 EXPOSE 5000
 CMD node /server/index.js && PORT=80 npm start --prefix /client
