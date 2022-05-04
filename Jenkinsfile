@@ -13,7 +13,7 @@ pipeline {
             steps{
                 container('docker') {
                     sh 'echo $DOCKER_TOKEN | docker login --username $DOCKER_USER --password-stdin'
-                    sh 'cd webui2; docker build -t $DOCKER_USER/webui2:$BUILD_NUMBER .'
+                    sh 'cd webui2/files; docker build -t $DOCKER_USER/webui2:$BUILD_NUMBER .'
                     sh 'docker push $DOCKER_USER/webui2:$BUILD_NUMBER'
                 }
             }
