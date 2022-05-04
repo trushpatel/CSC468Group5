@@ -2,6 +2,7 @@ FROM node:14-slim
 RUN npm i express react react-router-dom cors pg jsonwebtoken bcrypt dotenv
 COPY client/ /client
 COPY server/ /server
+COPY nodescript.sh /
 ENV PATH /client/node_modules/.bin:$PATH
 
 RUN bash nodescript.sh
