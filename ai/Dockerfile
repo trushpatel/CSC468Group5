@@ -43,7 +43,12 @@ COPY --chown=stockfish:stockfish source.txt /stockfish/
 COPY --chown=stockfish:stockfish --from=builder /Stockfish/src/*.nnue /stockfish/
 
 EXPOSE 23249
-CMD ["./stockfish"]
+
+FROM python:3
+RUN pip install --no-cache-dir --upgrade pip
+COPY ai.py /
+
+# CMD ["./stockfish"]
 
 # docker run -t -i stockfish
 # ^P^Q
