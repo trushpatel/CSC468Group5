@@ -10,10 +10,8 @@ COPY . .
 
 COPY /server/package.json ./
 COPY /server/package-lock.json ./
-COPY /server/database.sql /docker-entrypoint-initdb.d/database.sql
 
 RUN npm install --production
-CMD ["docker-entrypoint.sh", "postgres"]
 
 COPY /server/.env ./
 
