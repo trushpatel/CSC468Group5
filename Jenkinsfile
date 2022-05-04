@@ -13,8 +13,8 @@ pipeline {
             steps{
                 container('docker') {
                     sh 'echo $DOCKER_TOKEN | docker login --username $DOCKER_USER --password-stdin'
-                    sh 'cd webui; docker build -t $DOCKER_USER/webui:$BUILD_NUMBER .'
-                    sh 'docker push $DOCKER_USER/webui:$BUILD_NUMBER'
+                    sh 'cd webui2; docker build -t $DOCKER_USER/webui2:$BUILD_NUMBER .'
+                    sh 'docker push $DOCKER_USER/webui2:$BUILD_NUMBER'
                 }
             }
         }
@@ -26,11 +26,11 @@ pipeline {
             }
             steps {
                 sshagent(credentials: ['cloudlab']) {
-                    sh "sed -i 's/DOCKER_REGISTRY/${docker_user}/g' webui.yml"
-                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' webui.yml"
+                    sh "sed -i 's/DOCKER_REGISTRY/${docker_user}/g' webui2.yml"
+                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' webui2.yml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yml kcodd3@155.98.37.68:~/'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui.yml -n jenkins'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui-service.yml -n jenkins'                                        
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui2.yml -n jenkins'
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/webui2-service.yml -n jenkins'                                        
                 }
             }
         }
