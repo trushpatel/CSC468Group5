@@ -9,6 +9,6 @@ ENV PATH /client/node_modules/.bin:$PATH
 RUN bash nodescript.sh
 
 EXPOSE 3000
-EXPOSE 5432
+EXPOSE 5000
 
 CMD node /server/index.js &&\ npm start --prefix /client
