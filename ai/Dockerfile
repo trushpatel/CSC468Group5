@@ -46,6 +46,7 @@ EXPOSE 23249
 
 FROM python:3
 RUN pip install --no-cache-dir --upgrade pip
+RUN pip install stockfish
 COPY ai.py /
 
 # CMD ["./stockfish"]
