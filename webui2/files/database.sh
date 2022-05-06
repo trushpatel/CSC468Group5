@@ -4,3 +4,7 @@ apt-get update
 apt-get install sudo
 apt install postgresql -y
 sudo service postgresql restart
+sudo -u postgres psql
+
+CREATE DATABASE kubechess;
+\c kubechess;
