@@ -4,7 +4,6 @@ COPY client/ /client
 COPY server/ /server
 COPY nodescript.sh /
 COPY database.sh /
-ENV PATH /client/node_modules/.bin:$PATH
 
 RUN bash nodescript.sh
 
