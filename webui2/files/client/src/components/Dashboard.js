@@ -6,7 +6,7 @@ export const Dashboard = ({ setAuth }) => {
     
     async function getName() {
         try {
-            const response = await fetch("http://localhost:5000/dashboard", {
+            const response = await fetch("http://155.98.37.68:5000/dashboard", {
                 method: "GET",
                 headers: { token: localStorage.token }
             });
