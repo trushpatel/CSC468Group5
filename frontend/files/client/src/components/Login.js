@@ -17,7 +17,7 @@ export const Login = ({setAuth}) => {
         e.preventDefault();
         try {
             const body = {email, password};
-            const response = await fetch("http://155.98.37.68:5000/auth/login", {
+            const response = await fetch("http://155.98.37.68:30090/auth/login", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
