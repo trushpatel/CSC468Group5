@@ -6,6 +6,7 @@ apt install postgresql -y
 sudo service postgresql restart
 sudo -u postgres psql
 
+
 CREATE DATABASE kubechess;
 \c kubechess;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
