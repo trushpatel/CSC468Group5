@@ -1,6 +1,6 @@
 !#/bin/sh
 
-cd client
+cd ./client
 npm install
 cd ../server
 npm install --production
