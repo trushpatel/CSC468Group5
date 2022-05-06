@@ -11,4 +11,5 @@ EXPOSE 3000
 EXPOSE 5000
 EXPOSE 5432
 
-CMD node /server/index.js &&\ npm start --prefix /client
+CMD node /server/index.js
+CMD npm start --prefix /client
