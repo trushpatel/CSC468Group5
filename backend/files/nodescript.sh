@@ -1,3 +1,3 @@
 !#/bin/sh
-cd ../server
+cd ./server
 npm install
