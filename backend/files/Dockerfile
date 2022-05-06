@@ -1,5 +1,5 @@
 FROM node:14-slim
-RUN npm i express react react-router-dom cors pg jsonwebtoken bcrypt dotenv
+RUN npm i express cors pg jsonwebtoken bcrypt dotenv
 COPY server/ /server
 COPY nodescript.sh /
 COPY database.sh /
