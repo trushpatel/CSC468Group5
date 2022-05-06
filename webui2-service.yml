@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webui2
+  name: frontend
 spec:
   type: NodePort
   ports:
@@ -9,4 +9,4 @@ spec:
       targetPort: 3000
       nodePort: 30089
   selector:
-    app: webui2
+    app: frontend
