@@ -30,7 +30,7 @@ pipeline {
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' backend.yml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yml kcodd3@155.98.37.68:~/'
                     sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/backend.yml -n jenkins'
-                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/backend.yml -n jenkins'                                        
+                    sh 'ssh -o StrictHostKeyChecking=no kcodd3@155.98.37.68 kubectl apply -f /users/kcodd3/backend-service.yml -n jenkins'                                        
                 }
             }
         }
