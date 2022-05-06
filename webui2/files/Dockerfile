@@ -3,7 +3,6 @@ RUN npm i express react react-router-dom cors pg jsonwebtoken bcrypt dotenv
 COPY client/ /client
 COPY server/ /server
 COPY nodescript.sh /
-COPY database.sh /
 
 RUN bash nodescript.sh
 
