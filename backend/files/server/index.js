@@ -34,6 +34,6 @@ app.use("/gameSession", require("./routes/gameSession"));
 //console.log(`Socket.IO server running at http://localhost:3000/`);
 //});
 
-app.listen(5000, () => {
-    console.log("server is running on port 5000");
+app.listen(30090, () => {
+    console.log("server is running on port 300009");
 });
