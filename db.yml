@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: db
   template:
     metadata:
       labels:
-        app: backend
+        app: db
     spec:
       containers:
-      - name: backend
-        image: DOCKER_REGISTRY/backend:BUILD_NUMBER
+      - name: db
+        image: DOCKER_REGISTRY/db:BUILD_NUMBER
         ports:
           - name: http-port
-            containerPort: 5000
+            containerPort: 5432
